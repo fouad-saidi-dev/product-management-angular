@@ -10,19 +10,25 @@
       "id": "2",
       "name": "Iphone",
       "price": 15000,
-      "checked": false
+      "checked": true
     },
     {
-      "id": "3",
-      "name": "Lenovo Think pad",
-      "price": 7000,
-      "checked": false
+      "id": "3109",
+      "name": "Tablet",
+      "price": "4500",
+      "checked": true
     },
     {
-      "id": "4",
-      "name": "Samsung",
-      "price": 4000,
-      "checked": false
+      "id": "6a3f",
+      "name": "Test",
+      "price": "32434",
+      "checked": true
+    },
+    {
+      "id": "0708",
+      "name": "magana",
+      "price": "2334",
+      "checked": true
     }
   ]
 }

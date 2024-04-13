@@ -4,10 +4,12 @@
       List Products
     </div>
     <div class="card-body">
-      <div >
-        <input type="text" [(ngModel)]="search" >
-        <button class="btn btn-outline-success" (click)="searchProduct()">Search</button>
-      </div>
+{{keyword}}
+      <input type="text" [(ngModel)]="keyword">
+      <button class="btn btn-outline-success" (click)="searchProduct()">
+        <i class="bi bi-search "></i>
+      </button>
+
       <table class="table">
         <thead>
         <tr>
@@ -25,13 +27,17 @@
           <td>{{p.price}}</td>
           <td>
             <button (click)="handleCheckProduct(p)"
-              class="btn btn-outline-success">
+                    class="btn btn-outline-success">
               <i [class]="p.checked?'bi bi-check':'bi bi-circle'"></i>
             </button>
           </td>
           <td>
-            <button (click)="deleteProduct(p)" class="btn btn-danger ms-2">Delete</button>
-            <button  class="btn btn-success ms-2">Edit</button>
+            <button (click)="handleDelete(p)" class="btn btn-outline-danger ms-2">
+              <i class="bi bi-trash-fill"></i>
+            </button>
+            <button class="btn btn-outline-success ms-2">
+              <i class="bi bi-pen-fill"></i>
+            </button>
           </td>
         </tr>
         </tbody>

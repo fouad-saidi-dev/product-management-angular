@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {ProductService} from "../../services/product.service";
 import {Product} from "../../model/product.model";
 
@@ -8,13 +8,17 @@ import {Product} from "../../model/product.model";
   styleUrl: './products.component.css'
 })
 export class ProductsComponent implements OnInit {
-  public products: Array<Product> = [];
-  public search = ""
+  public products: Array<Product> = []; //public products$ !: Observable<Array<Product>>; in file html must change product to (products$ | async)
+  public keyword : string = "";
 
   constructor(private productService: ProductService) {
   }
 
   ngOnInit(): void {
+    this.getProducts()
+  }
+
+  getProducts(){
     this.productService.getProducts()
       .subscribe({
         next: data => {
@@ -24,19 +28,28 @@ export class ProductsComponent implements OnInit {
           console.log(err)
         }
       })
+    //this.productService.getProducts().pipe();
   }
 
-  deleteProduct(p: any) {
-    let index = this.products.indexOf(p)
-    this.products.splice(index, 1);
+  handleDelete(product: Product) {
+    if (confirm('Delete this product?'))
+    this.productService.deleteProduct(product).subscribe({
+      next:value => {
+        this.products = this.products.filter(p=>p.id!=product.id);
+      }
+    })
   }
+
 
   searchProduct() {
-    if (this.search.trim() !== "")
-      this.products = this.products.filter(
-        (product: { name: string; }) =>
-          product.name.match(this.search)
-      )
+      this.productService.searchProduct(this.keyword).subscribe({
+        next:value => {
+          this.products=value;
+        },
+        error:err => {
+          console.log(err)
+        }
+      })
   }
 
   handleCheckProduct(product: Product) {
