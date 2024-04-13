@@ -14,6 +14,7 @@
           <th>ID</th>
           <th>Name</th>
           <th>Price</th>
+          <th>Checked</th>
           <th>Actions</th>
         </tr>
         </thead>
@@ -22,6 +23,12 @@
           <td>{{p.id}}</td>
           <td>{{p.name}}</td>
           <td>{{p.price}}</td>
+          <td>
+            <button (click)="handleCheckProduct(p)"
+              class="btn btn-outline-success">
+              <i [class]="p.checked?'bi bi-check':'bi bi-circle'"></i>
+            </button>
+          </td>
           <td>
             <button (click)="deleteProduct(p)" class="btn btn-danger ms-2">Delete</button>
             <button  class="btn btn-success ms-2">Edit</button>

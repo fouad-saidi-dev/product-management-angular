@@ -1,0 +1,28 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "HP",
+      "price": 10000,
+      "checked": true
+    },
+    {
+      "id": "2",
+      "name": "Iphone",
+      "price": 15000,
+      "checked": false
+    },
+    {
+      "id": "3",
+      "name": "Lenovo Think pad",
+      "price": 7000,
+      "checked": false
+    },
+    {
+      "id": "4",
+      "name": "Samsung",
+      "price": 4000,
+      "checked": false
+    }
+  ]
+}

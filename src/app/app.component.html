@@ -1,10 +1,22 @@
 <div class="p-3">
   <ul class="nav nav-pills">
     <li>
-      <button (click)="goToHome()" [ngClass]="currentRoute == 'home'?'btn btn-info ms-2':'btn btn-outline-info ms-2'">Home</button>
+      <button (click)="gotToUrl('home')" [ngClass]="currentRoute == 'home'?'btn btn-info ms-2':'btn btn-outline-info ms-2'">
+        Home
+        <i class="bi bi-house text-success"></i>
+      </button>
     </li>
     <li>
-      <button (click)="goToProducts()" [ngClass]="currentRoute == 'products'?'btn btn-info ms-2':'btn btn-outline-info ms-2'">Products</button>
+      <button (click)="gotToUrl('products')"
+              [ngClass]="currentRoute == 'products'?'btn btn-info ms-2':'btn btn-outline-info ms-2'">Products
+        <i class="bi bi-arrow-down-up text-success"></i>
+      </button>
+    </li>
+    <li>
+      <button (click)="gotToUrl('newProduct')"
+              [ngClass]="currentRoute == 'newProduct'?'btn btn-info ms-2':'btn btn-outline-info ms-2'">New Product
+        <i class="bi bi-plus-circle text-success"></i>
+      </button>
     </li>
   </ul>
 </div>

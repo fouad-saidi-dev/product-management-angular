@@ -11,6 +11,11 @@ export class AppComponent {
   public currentRoute : any;
   constructor(private router:Router) {
   }
+
+  gotToUrl(url:string) {
+    this.currentRoute = url;
+    this.router.navigateByUrl(url);
+  }
   goToHome() {
     this.currentRoute = "home"
      this.router.navigateByUrl("/home");

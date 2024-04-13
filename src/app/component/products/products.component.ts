@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {ProductService} from "../../services/product.service";
+import {Product} from "../../model/product.model";
 
 @Component({
   selector: 'app-products',
@@ -6,30 +8,42 @@ import {Component, OnInit} from '@angular/core';
   styleUrl: './products.component.css'
 })
 export class ProductsComponent implements OnInit {
-  public products: any;
+  public products: Array<Product> = [];
   public search = ""
-  constructor() {
+
+  constructor(private productService: ProductService) {
   }
 
   ngOnInit(): void {
-    this.products = [
-      {"id": 1, "name": "HP", "price": 10000},
-      {"id": 2, "name": "Iphone", "price": 15000},
-      {"id": 3, "name": "Lenovo Think pad", "price": 7000},
-      {"id": 4, "name": "Samsung", "price": 4000},
-    ];
+    this.productService.getProducts()
+      .subscribe({
+        next: data => {
+          this.products = data
+        },
+        error: err => {
+          console.log(err)
+        }
+      })
   }
 
-  deleteProduct(p:any) {
+  deleteProduct(p: any) {
     let index = this.products.indexOf(p)
-    this.products.splice(index,1);
+    this.products.splice(index, 1);
   }
 
   searchProduct() {
     if (this.search.trim() !== "")
-    this.products = this.products.filter(
-      (product: { name: string; }) =>
-        product.name.match(this.search)
-    )
+      this.products = this.products.filter(
+        (product: { name: string; }) =>
+          product.name.match(this.search)
+      )
+  }
+
+  handleCheckProduct(product: Product) {
+    this.productService.checkProduct(product).subscribe({
+      next: updatedProduct => {
+        product.checked = !product.checked;
+      }
+    })
   }
 }
