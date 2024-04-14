@@ -1,10 +1,9 @@
 <div class="p-3">
   <div class="card">
-    <div class="card-body">
+    <div class="card-body" *ngIf="productForm">
       <div class="row">
         <div class="col-md-6">
-<!--          {{productForm.value | json}}-->
-          <form [formGroup]="productForm" (ngSubmit)="saveProduct()">
+          <form [formGroup]="productForm" (ngSubmit)="updateProduct()">
             <div class="mb-3">
               <label class="form-label">Name</label>
               <input class="form-control" type="text" formControlName="name">
@@ -17,10 +16,11 @@
               <label class="form-label">Checked</label>
               <input class="form-check-input" type="checkbox" formControlName="checked">
             </div>
-            <button class="btn btn-success" [disabled]="productForm.invalid">Save</button>
+            <button class="btn btn-success" [disabled]="productForm.invalid">Edit</button>
           </form>
         </div>
       </div>
     </div>
   </div>
 </div>
+

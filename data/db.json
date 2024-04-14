@@ -10,24 +10,60 @@
       "id": "2",
       "name": "Iphone",
       "price": 15000,
-      "checked": true
+      "checked": false
     },
     {
       "id": "3109",
       "name": "Tablet",
-      "price": "4500",
+      "price": 4567,
       "checked": true
     },
     {
       "id": "6a3f",
-      "name": "Test",
-      "price": "32434",
-      "checked": true
+      "name": "Lenovo",
+      "price": 11000,
+      "checked": false
     },
     {
       "id": "0708",
       "name": "magana",
-      "price": "2334",
+      "price": 1234,
+      "checked": true
+    },
+    {
+      "id": "78f4",
+      "name": "p1",
+      "price": 233456,
+      "checked": true
+    },
+    {
+      "id": "78f4",
+      "name": "p1",
+      "price": 4889,
+      "checked": true
+    },
+    {
+      "id": "78f4",
+      "name": "p1",
+      "price": 1226,
+      "checked": true
+    },
+    {
+      "id": "78f4",
+      "name": "p1",
+      "price": 122,
+      "checked": true
+    },
+    {
+      "id": "78f4",
+      "name": "p1",
+      "price": 122,
+      "checked": true
+    },
+    {
+      "id": "5ad8",
+      "name": "test number",
+      "price": 12345,
       "checked": true
     }
   ]
