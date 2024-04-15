@@ -3,6 +3,7 @@ import {ProductService} from "../../services/product.service";
 import {Product} from "../../model/product.model";
 import {HttpResponse} from "@angular/common/http";
 import {Router} from "@angular/router";
+import {AppStateService} from "../../services/app-state.service";
 
 @Component({
   selector: 'app-products',
@@ -10,14 +11,16 @@ import {Router} from "@angular/router";
   styleUrl: './products.component.css'
 })
 export class ProductsComponent implements OnInit {
-  public products: Array<Product> = []; //public products$ !: Observable<Array<Product>>; in file html must change product to (products$ | async)
-  public keyword: string = "";
-  totalPages: number = 0;
-  pageSize: number = 4;
-  currentPage: number = 1;
-  public productCount: number = 0;
+  // public products: Array<Product> = []; //public products$ !: Observable<Array<Product>>; in file html must change product to (products$ | async)
+  // public keyword: string = "";
+  // totalPages: number = 0;
+  // pageSize: number = 4;
+  // currentPage: number = 1;
+  // public productCount: number = 0;
 
-  constructor(private productService: ProductService,private router:Router) {
+  constructor(private productService: ProductService,
+              private router:Router,
+              public appState:AppStateService) {
   }
 
   ngOnInit(): void {
@@ -25,24 +28,24 @@ export class ProductsComponent implements OnInit {
   }
 
   getProducts() {
-    this.productService.getProducts(this.currentPage, this.pageSize)
+    this.productService.getProducts(this.appState.productState.currentPage, this.appState.productState.pageSize)
       .subscribe({
         next: (res) => {
-          this.products = res.body as Product[];
+          this.appState.productState.products = res.body as Product[];
           this.productService.getCountProducts()
             .subscribe({
               next: data => {
-                this.productCount = data.length
-                this.totalPages = Math.ceil(this.productCount / this.pageSize)
-                if (this.productCount % this.pageSize !== 0) {
-                  this.totalPages += 1;
+                this.appState.productState.productCount = data.length
+                this.appState.productState.totalPages = Math.ceil(this.appState.productState.productCount / this.appState.productState.pageSize)
+                if (this.appState.productState.productCount % this.appState.productState.pageSize !== 0) {
+                  this.appState.productState.totalPages += 1;
                 }
               },
               error: err => {
                 console.log(err)
               }
             })
-          console.log("totalPages", this.totalPages)
+          console.log("totalPages", this.appState.productState.totalPages)
         },
         error: err => {
           console.log(err)
@@ -53,10 +56,10 @@ export class ProductsComponent implements OnInit {
 
   handleGoToPage(page: number) {
     console.log("Clicked page:", page);
-    console.log("Current page:", this.currentPage);
-    console.log("Total pages:", this.totalPages);
-    if (page >= 1 && page <= this.totalPages)
-      this.currentPage = page;
+    console.log("Current page:", this.appState.productState.currentPage);
+    console.log("Total pages:", this.appState.productState.totalPages);
+    if (page >= 1 && page <= this.appState.productState.totalPages)
+      this.appState.productState.currentPage = page;
       this.getProducts()
   }
 
@@ -64,16 +67,17 @@ export class ProductsComponent implements OnInit {
     if (confirm('Delete this product?'))
       this.productService.deleteProduct(product).subscribe({
         next: value => {
-          this.products = this.products.filter(p => p.id != product.id);
+          //this.appState.productState.products = this.appState.productState.products.filter((p:any) => p.id != product.id);
+          this.getProducts()
         }
       })
   }
 
 
   searchProduct() {
-    this.productService.searchProduct(this.keyword).subscribe({
+    this.productService.searchProduct(this.appState.productState.keyword).subscribe({
       next: value => {
-        this.products = value;
+        this.appState.productState.products = value;
       },
       error: err => {
         console.log(err)

@@ -4,8 +4,7 @@
       List Products
     </div>
     <div class="card-body">
-      {{keyword}}
-      <input type="text" [(ngModel)]="keyword">
+      <input type="text" [(ngModel)]="appState.productState.keyword">
       <button class="btn btn-outline-success" (click)="searchProduct()">
         <i class="bi bi-search "></i>
       </button>
@@ -20,8 +19,8 @@
           <th>Actions</th>
         </tr>
         </thead>
-        <tbody *ngIf="products">
-        <tr *ngFor="let p of products">
+        <tbody *ngIf="appState.productState.products">
+        <tr *ngFor="let p of appState.productState.products">
           <td>{{p.id}}</td>
           <td>{{p.name}}</td>
           <td>{{p.price}}</td>
@@ -43,7 +42,7 @@
         </tbody>
       </table>
       <ul class="nav nav-pills">
-        <li *ngFor="let page of getArray(this.totalPages); let i=index" [class.active]="currentPage === page">
+        <li *ngFor="let page of getArray(this.appState.productState.totalPages); let i=index" [class.active]="appState.productState.currentPage === page">
           <button class="btn btn-outline-success m-1" (click)="handleGoToPage(page)">
             {{page}}
           </button>

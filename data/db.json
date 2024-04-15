@@ -4,13 +4,13 @@
       "id": "1",
       "name": "HP",
       "price": 10000,
-      "checked": true
+      "checked": false
     },
     {
       "id": "2",
       "name": "Iphone",
       "price": 15000,
-      "checked": false
+      "checked": true
     },
     {
       "id": "3109",
@@ -19,15 +19,9 @@
       "checked": true
     },
     {
-      "id": "6a3f",
-      "name": "Lenovo",
-      "price": 11000,
-      "checked": false
-    },
-    {
       "id": "0708",
-      "name": "magana",
-      "price": 1234,
+      "name": "Asus",
+      "price": 10000,
       "checked": true
     },
     {
@@ -46,6 +40,24 @@
       "id": "78f4",
       "name": "p1",
       "price": 1226,
+      "checked": true
+    },
+    {
+      "id": "78f4",
+      "name": "p1",
+      "price": 122,
+      "checked": true
+    },
+    {
+      "id": "78f4",
+      "name": "p1",
+      "price": 122,
+      "checked": true
+    },
+    {
+      "id": "5ad8",
+      "name": "test number",
+      "price": 12345,
       "checked": true
     },
     {

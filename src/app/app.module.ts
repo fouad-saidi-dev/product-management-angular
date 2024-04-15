@@ -10,6 +10,7 @@ import { NewProductComponent } from './component/new-product/new-product.compone
 import {HttpClientModule} from "@angular/common/http";
 import {ProductService} from "./services/product.service";
 import { EditProductComponent } from './component/edit-product/edit-product.component';
+import { DashboardComponent } from './component/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { EditProductComponent } from './component/edit-product/edit-product.comp
     HomeComponent,
     ProductsComponent,
     NewProductComponent,
-    EditProductComponent
+    EditProductComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
