@@ -7,10 +7,13 @@ import { HomeComponent } from './component/home/home.component';
 import { ProductsComponent } from './component/products/products.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { NewProductComponent } from './component/new-product/new-product.component';
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {ProductService} from "./services/product.service";
 import { EditProductComponent } from './component/edit-product/edit-product.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
+import { NavbarComponent } from './component/navbar/navbar.component';
+import { AppErrorsComponent } from './component/app-errors/app-errors.component';
+import {AppHttpInterceptor} from "./services/app-http.interceptor";
 
 @NgModule({
   declarations: [
@@ -19,7 +22,9 @@ import { DashboardComponent } from './component/dashboard/dashboard.component';
     ProductsComponent,
     NewProductComponent,
     EditProductComponent,
-    DashboardComponent
+    DashboardComponent,
+    NavbarComponent,
+    AppErrorsComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +34,8 @@ import { DashboardComponent } from './component/dashboard/dashboard.component';
     HttpClientModule
   ],
   providers: [
-    ProductService
+    ProductService,
+    {provide:HTTP_INTERCEPTORS, useClass : AppHttpInterceptor, multi : true}
   ],
   bootstrap: [AppComponent]
 })

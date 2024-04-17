@@ -7,36 +7,36 @@ import {Product} from "../model/product.model";
   providedIn: 'root'
 })
 export class ProductService {
-
+  private host:string ="http://localhost:8089";
   constructor(private http: HttpClient) {
   }
 
-  public getProducts(page:number=2, size:number=4) {
-    return this.http.get<Array<Product>>(`http://localhost:8089/products?_page=${page}&_limit=${size}`,{observe:'response'})
+  public searchProducts(keyword:string="",page:number=2, size:number=4) {
+    return this.http.get<Array<Product>>(`${this.host}/products?name_like=${keyword}&_page=${page}&_limit=${size}`,{observe:'response'})
   }
 
   public checkProduct(product: Product):Observable<Product> {
-    return this.http.patch<Product>(`http://localhost:8089/products/${product.id}`,
+    return this.http.patch<Product>(`${this.host}/products/${product.id}`,
       {checked: !product.checked});
   }
   public deleteProduct(product:Product) {
-    return this.http.delete(`http://localhost:8089/products/${product.id}`)
+    return this.http.delete(`${this.host}/products/${product.id}`)
   }
 
   saveProduct(product: Product):Observable<Product> {
-    return this.http.post<Product>(`http://localhost:8089/products`,product);
+    return this.http.post<Product>(`${this.host}/products`,product);
   }
-  public searchProduct(keyword: string="HP"):Observable<Array<Product>> {
-    return this.http.get<Array<Product>>(`http://localhost:8089/products?name_like=${keyword}`);
-  }
+  // public searchProduct(keyword: string):Observable<Array<Product>> {
+  //   return this.http.get<Array<Product>>(`${this.host}/products?name_like=${keyword}`);
+  // }
   public getCountProducts():Observable<Array<Product>>{
-    return this.http.get<Array<Product>>(`http://localhost:8089/products`);
+    return this.http.get<Array<Product>>(`${this.host}/products`);
   }
   public getProductById(id:number):Observable<Product>{
-    return this.http.get<Product>(`http://localhost:8089/products/${id}`);
+    return this.http.get<Product>(`${this.host}/products/${id}`);
   }
   public editProduct(product:Product):Observable<Product>{
-    return this.http.put<Product>(`http://localhost:8089/products/${product.id}`,product)
+    return this.http.put<Product>(`${this.host}/products/${product.id}`,product)
   }
 
 }

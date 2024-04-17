@@ -7,22 +7,5 @@ import {Router} from "@angular/router";
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'ProductManagement';
-  public currentRoute : any;
-  constructor(private router:Router) {
-  }
 
-  gotToUrl(url:string) {
-    this.currentRoute = url;
-    this.router.navigateByUrl(url);
-  }
-  goToHome() {
-    this.currentRoute = "home"
-     this.router.navigateByUrl("/home");
-  }
-
-  goToProducts() {
-    this.currentRoute = "products"
-    this.router.navigateByUrl("/products");
-  }
 }

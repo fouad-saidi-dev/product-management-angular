@@ -5,18 +5,21 @@ import {Product} from "../model/product.model";
   providedIn: 'root'
 })
 export class AppStateService {
-  public productState:any = {
+  public productState: any = {
     products: [],
     keyword: "",
     totalPages: 0,
     pageSize: 4,
     currentPage: 1,
-    productCount: 0
+    productCount: 0,
+    status: "",
+    errorMessage: ""
   }
 
   constructor() {
   }
-  public setProductState(state:any){
-    this.productState={...this.productState,state}
+
+  public setProductState(state: any) {
+    this.productState = {...this.productState, ...state}
   }
 }

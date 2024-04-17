@@ -1,82 +1,106 @@
 {
   "products": [
     {
-      "id": "1",
+      "id": 1,
       "name": "HP",
       "price": 10000,
-      "checked": false
+      "checked": true
     },
     {
-      "id": "2",
+      "id": 2,
       "name": "Iphone",
       "price": 15000,
       "checked": true
     },
     {
-      "id": "3109",
+      "id": 3,
       "name": "Tablet",
       "price": 4567,
       "checked": true
     },
     {
-      "id": "0708",
+      "id": 4,
       "name": "Asus",
       "price": 10000,
       "checked": true
     },
     {
-      "id": "78f4",
+      "id": 5,
       "name": "p1",
       "price": 233456,
       "checked": true
     },
     {
-      "id": "78f4",
+      "id": 6,
       "name": "p1",
       "price": 4889,
       "checked": true
     },
     {
-      "id": "78f4",
+      "id": 7,
       "name": "p1",
       "price": 1226,
       "checked": true
     },
     {
-      "id": "78f4",
+      "id": 8,
       "name": "p1",
       "price": 122,
       "checked": true
     },
     {
-      "id": "78f4",
+      "id": 9,
       "name": "p1",
       "price": 122,
       "checked": true
     },
     {
-      "id": "5ad8",
+      "id": 10,
       "name": "test number",
       "price": 12345,
       "checked": true
     },
     {
-      "id": "78f4",
+      "id": 11,
       "name": "p1",
       "price": 122,
       "checked": true
     },
     {
-      "id": "78f4",
+      "id": 12,
       "name": "p1",
       "price": 122,
       "checked": true
     },
     {
-      "id": "5ad8",
+      "id": 13,
       "name": "test number",
       "price": 12345,
       "checked": true
+    },
+    {
+      "id": 14,
+      "name": "test",
+      "price": 739303,
+      "checked": true
+    },
+    {
+      "id": 15,
+      "name": "dkhd",
+      "price": 2334,
+      "checked": true
+    },
+    {
+      "id": 16,
+      "name": "kjdlkd",
+      "price": 8749849,
+      "checked": true
+    },
+    {
+      "name": "SAUVAGE",
+      "price": 1800,
+      "checked": true,
+      "id": 17
     }
   ]
 }
