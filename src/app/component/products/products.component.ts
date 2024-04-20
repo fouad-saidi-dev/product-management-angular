@@ -28,38 +28,30 @@ export class ProductsComponent implements OnInit {
   }
 
   searchProducts() {
-    this.appState.setProductState({
-      status: 'LOADING'
-    })
-    this.productService.searchProducts(this.appState.productState.keyword,this.appState.productState.currentPage, this.appState.productState.pageSize)
+    // this.appState.setProductState({
+    //   status: 'LOADING'
+    // })
+    this.productService.searchProducts(this.appState.productState.keyword, this.appState.productState.currentPage, this.appState.productState.pageSize)
       .subscribe({
         next: (res) => {
-          this.appState.productState.products = res.body as Product[];
-          this.productService.getCountProducts()
-            .subscribe({
-              next: data => {
-                this.appState.productState.productCount = data.length
-                const headers = new HttpHeaders().set('x-total-count',data.length.toString())
-                console.log(headers.get('x-total-count'))
-                this.appState.productState.totalPages = Math.floor(this.appState.productState.productCount / this.appState.productState.pageSize)
-                if (this.appState.productState.productCount % this.appState.productState.pageSize != 0) {
-                  this.appState.productState.totalPages += 1;
-                }
-                this.appState.setProductState({
-                  status: 'LOADER'
-                })
-              },
-              error: err => {
-                this.appState.setProductState({
-                  status: 'ERROR',
-                  errorMessage: err
-                })
-              }
-            })
-          console.log("totalPages", this.appState.productState.totalPages)
+          let products = res.body as Product[];
+          let productCount:number = parseInt(res.headers.get('X-Total-Count')!);
+          let totalPages = Math.floor(productCount / this.appState.productState.pageSize)
+          if (productCount % this.appState.productState.pageSize != 0) {
+            ++totalPages;
+          }
+          this.appState.setProductState({
+            products:products,
+            productCount:productCount,
+            totalPages:totalPages,
+            status: 'LOADER'
+          })
         },
         error: err => {
-          console.log(err)
+          this.appState.setProductState({
+            status: 'ERROR',
+            errorMessage: err
+          })
         }
       })
     //this.productService.getProducts().pipe();
@@ -105,6 +97,6 @@ export class ProductsComponent implements OnInit {
   }
 
   handleEdit(p: Product) {
-    this.router.navigateByUrl(`/editProduct/${p.id}`)
+    this.router.navigateByUrl(`/admin/editProduct/${p.id}`)
   }
 }

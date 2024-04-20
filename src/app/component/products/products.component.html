@@ -42,7 +42,7 @@
         </tbody>
       </table>
       <ul class="nav nav-pills">
-        <li *ngFor="let page of [].constructor(this.appState.productState.totalPages); let i=index" [class.active]="appState.productState.currentPage === page">
+        <li *ngFor="let page of [].constructor(appState.productState.totalPages); let i=index" [class.active]="appState.productState.currentPage === page">
           <button class="btn btn-outline-success m-1" (click)="handleGoToPage(i+1)">
             {{i+1}}
           </button>
