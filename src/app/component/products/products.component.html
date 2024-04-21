@@ -15,22 +15,22 @@
           <th>ID</th>
           <th>Name</th>
           <th>Price</th>
-          <th>Checked</th>
-          <th>Actions</th>
+          <th *ngIf="appState.authState.roles.includes('ADMIN')">Checked</th>
+          <th *ngIf="appState.authState.roles.includes('ADMIN')">Actions</th>
         </tr>
         </thead>
         <tbody *ngIf="appState.productState.products">
         <tr *ngFor="let p of appState.productState.products">
           <td>{{p.id}}</td>
-          <td>{{p.name}}</td>
+          <td >{{p.name}}</td>
           <td>{{p.price}}</td>
-          <td>
+          <td *ngIf="appState.authState.roles.includes('ADMIN')">
             <button (click)="handleCheckProduct(p)"
                     class="btn btn-outline-success">
               <i [class]="p.checked?'bi bi-check':'bi bi-circle'"></i>
             </button>
           </td>
-          <td>
+          <td *ngIf="appState.authState.roles.includes('ADMIN')">
             <button (click)="handleDelete(p)" class="btn btn-outline-danger ms-2">
               <i class="bi bi-trash-fill"></i>
             </button>
