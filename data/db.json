@@ -3,20 +3,27 @@
     {
       "id": "user1",
       "password": "MTIzNA==",
-      "roles" : ["USER"],
-      "token" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwiaWF0IjoxNTE2MjM5MDIyLCJleHAiOjE1MTYyMzkwMjIsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4OS9hdXRoIiwibmJmIjoxNTE2MjM5MDIyLCJmaXJzdG5hbWUiOiJmb3VhZCIsImxhc3RuYW1lIjoiU0FJREkiLCJlbWFpbCI6ImZvdWFkLnNhaWRpQGdtYWlsLmNvbSIsInJvbGVzIjpbIlVTRVIiXX0.CuwuewsvGglvzZFdcz4iRn5WDuu9BVSrmRG8uNp6b9s"
+      "roles": [
+        "USER"
+      ],
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwiaWF0IjoxNTE2MjM5MDIyLCJleHAiOjE1MTYyMzkwMjIsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4OS9hdXRoIiwibmJmIjoxNTE2MjM5MDIyLCJmaXJzdG5hbWUiOiJmb3VhZCIsImxhc3RuYW1lIjoiU0FJREkiLCJlbWFpbCI6ImZvdWFkLnNhaWRpQGdtYWlsLmNvbSIsInJvbGVzIjpbIlVTRVIiXX0.CuwuewsvGglvzZFdcz4iRn5WDuu9BVSrmRG8uNp6b9s"
     },
     {
       "id": "user2",
       "password": "MTIzNA==",
-      "roles" : ["USER"],
-      "token" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwiaWF0IjoxNTE2MjM5MDIyLCJleHAiOjE1MTYyMzkwMjIsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4OS9hdXRoIiwibmJmIjoxNTE2MjM5MDIyLCJmaXJzdG5hbWUiOiJmb3VhZCIsImxhc3RuYW1lIjoiU0FJREkiLCJlbWFpbCI6ImZvdWFkLnNhaWRpQGdtYWlsLmNvbSIsInJvbGVzIjpbIlVTRVIiXX0.CuwuewsvGglvzZFdcz4iRn5WDuu9BVSrmRG8uNp6b9s"
+      "roles": [
+        "USER"
+      ],
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwiaWF0IjoxNTE2MjM5MDIyLCJleHAiOjE1MTYyMzkwMjIsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4OS9hdXRoIiwibmJmIjoxNTE2MjM5MDIyLCJmaXJzdG5hbWUiOiJmb3VhZCIsImxhc3RuYW1lIjoiU0FJREkiLCJlbWFpbCI6ImZvdWFkLnNhaWRpQGdtYWlsLmNvbSIsInJvbGVzIjpbIlVTRVIiXX0.CuwuewsvGglvzZFdcz4iRn5WDuu9BVSrmRG8uNp6b9s"
     },
     {
       "id": "admin",
       "password": "MTIzNA==",
-      "roles" : ["USER","ADMIN"],
-      "token" : "eyJhbGciOiJIUzI1 NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwiaWF0IjoxNTE2MjM5MDIyLCJleHAiOjE1MTYyMzkwMjIsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4OS9hdXRoIiwibmJmIjoxNTE2MjM5MDIyLCJmaXJzdG5hbWUiOiJmb3VhZCIsImxhc3RuYW1lIjoiU0FJREkiLCJlbWFpbCI6ImZvdWFkLnNhaWRpQGdtYWlsLmNvbSIsInJvbGVzIjpbIkFETUlOIl19.UAn5oaZe3FEfzOP2bynD1_9rzipHBRaZfRFdeQw_f3Q"
+      "roles": [
+        "USER",
+        "ADMIN"
+      ],
+      "token": "eyJhbGciOiJIUzI1 NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwiaWF0IjoxNTE2MjM5MDIyLCJleHAiOjE1MTYyMzkwMjIsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4OS9hdXRoIiwibmJmIjoxNTE2MjM5MDIyLCJmaXJzdG5hbWUiOiJmb3VhZCIsImxhc3RuYW1lIjoiU0FJREkiLCJlbWFpbCI6ImZvdWFkLnNhaWRpQGdtYWlsLmNvbSIsInJvbGVzIjpbIkFETUlOIl19.UAn5oaZe3FEfzOP2bynD1_9rzipHBRaZfRFdeQw_f3Q"
     }
   ],
   "products": [
@@ -36,12 +43,6 @@
       "id": 3,
       "name": "Tablet",
       "price": 4567,
-      "checked": true
-    },
-    {
-      "id": 4,
-      "name": "Asus",
-      "price": 10000,
       "checked": true
     },
     {
@@ -145,6 +146,12 @@
       "price": 2334,
       "checked": true,
       "id": 21
+    },
+    {
+      "name": "IPHONE 14 PRO MAX",
+      "price": 140000,
+      "checked": true,
+      "id": 22
     }
   ]
 }

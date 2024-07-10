@@ -1,27 +1,37 @@
 # ProductManagement
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.3.
+### ADMIN INTERFACES FOR PRODUCT MANAGEMENT.
 
-## Development server
+#### Login failed :
+![Login](./captures/login-failed.png)
+#### Login success :
+![Login](./captures/login.png)
+#### products :
+![products](./captures/products.png)
+#### products pagination :
+![products pagination](./captures/products-pagination.png)
+#### products search :
+![product](./captures/product-search.png)
+#### edit product :
+![edit product](./captures/editproduct.png)
+#### success edit product :
+![edit product](./captures/success-edit.png)
+#### after edit product :
+![edit product](./captures/after-edit.png)
+#### delete product :
+![delete product](./captures/deleteproduct.png)
+#### after delete product :
+![delete product](./captures/afterdelete.png)
+#### add product :
+![add product](./captures/save-product.png)
+#### after add product :
+![add product](./captures/afteradd.png)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### USER INTERFACES FOR PRODUCT MANAGEMENT.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+#### login :
+![login](./captures/user-login.png)
+#### products :
+![products](./captures/products-user.png)
+#### unauthorized for save product:
+![unauthorized](./captures/notAuthorized.png)
